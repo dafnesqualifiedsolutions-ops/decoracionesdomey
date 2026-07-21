@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decoraciones Domey — Tapicería y Muebles a Medida | Riviera Maya</title>
+<meta name="description" content="Decoraciones Domey: muebles a medida, tapicería y cortinas de alta calidad para casas privadas en Cancún, Puerto Morelos y Playa del Carmen. Artesanía de Thomás Domey.">
+<style>
+  :root{
+    --bg:#f7f3ec; --ink:#2b2620; --accent:#9c6b3f; --accent2:#3f5d4c;
+    --card:#fffdf8; --muted:#6b6258; --line:#e3d9c9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  header{position:sticky;top:0;background:rgba(247,243,236,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:50}
+  .bar{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+  .brand{font-weight:700;font-size:1.25rem;letter-spacing:.5px;color:var(--accent)}
+  .brand small{display:block;font-weight:400;font-size:.7rem;color:var(--muted);letter-spacing:2px}
+  .lang button{background:none;border:1px solid var(--line);border-radius:20px;padding:6px 14px;cursor:pointer;font-size:.85rem;color:var(--ink)}
+  .lang button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  section{max-width:1080px;margin:0 auto;padding:64px 20px}
+  .hero{text-align:center;padding:90px 20px 70px;background:linear-gradient(160deg,#fbf8f2,#efe6d6)}
+  .hero h1{font-size:2.6rem;line-height:1.15;margin-bottom:18px;color:var(--ink)}
+  .hero p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto 28px}
+  .cta{display:inline-block;background:var(--accent2);color:#fff;text-decoration:none;padding:14px 30px;border-radius:30px;font-weight:600;font-size:1rem;box-shadow:0 6px 18px rgba(63,93,76,.25)}
+  .cta:hover{transform:translateY(-2px)}
+  .cta.wa{background:#25d366}
+  h2{font-size:2rem;margin-bottom:10px;color:var(--accent)}
+  .sub{color:var(--muted);margin-bottom:36px;max-width:680px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 4px 14px rgba(0,0,0,.04)}
+  .card h3{color:var(--accent2);margin-bottom:10px;font-size:1.25rem}
+  .card p{color:var(--muted);font-size:.97rem}
+  .about{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .about .tag{display:inline-block;background:#efe2cf;color:var(--accent);padding:5px 14px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}
+  .quote{font-style:italic;color:var(--muted);border-left:3px solid var(--accent);padding-left:16px;margin-top:18px}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .ph{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#ece3d3,#ece3d3 12px,#f3ecdf 12px,#f3ecdf 24px);border:1px dashed var(--accent);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:.85rem;padding:14px}
+  .bear{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px;text-align:center}
+  .bear .badge{background:var(--accent);color:#fff;display:inline-block;padding:6px 16px;border-radius:20px;font-size:.8rem;letter-spacing:1px;margin-bottom:14px}
+  .contact{background:var(--ink);color:#f3ece0;border-radius:20px;padding:48px 32px;text-align:center}
+  .contact h2{color:#f3ece0}
+  .contact a{color:#fff}
+  .contact .row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:24px}
+  .contact .row a{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:600}
+  .contact .row a.wa{background:#25d366;border-color:#25d366}
+  footer{text-align:center;padding:30px 20px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+  .areas{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+  .areas span{background:#efe2cf;color:var(--accent);padding:5px 14px;border-radius:20px;font-size:.85rem}
+  [data-en]{display:none}
+  html.lang-en [data-es]{display:none}
+  html.lang-en [data-en]{display:inline}
+  html.lang-en .block-es{display:none}
+  html.lang-en .block-en{display:block}
+  .block-en{display:none}
+  @media(max-width:760px){.hero h1{font-size:2rem}.about{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="brand">DECORACIONES DOMEY<small>RIVIERA MAYA · DESDE 0</small></div>
+    <div class="lang">
+      <button id="btn-es" class="active" onclick="setLang('es')">🇲🇽 ES</button>
+      <button id="btn-en" onclick="setLang('en')">🇺🇸 EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1><span data-es>Muebles y tapicería de alta calidad, hechos a mano</span><span data-en>Handcrafted high-end furniture &amp; upholstery, made to order</span></h1>
+  <p><span data-es>Para casas privadas de alto nivel en Cancún, Puerto Morelos y Playa del Carmen. Thomás Domey — artesano y perfeccionista, con clientes como el resort 5 estrellas Mayakoba.</span><span data-en>For high-end private homes in Cancún, Puerto Morelos and Playa del Carmen. Thomás Domey — craftsman and perfectionist, with clients like the 5-star Mayakoba resort.</span></p>
+  <a class="cta wa" href="https://wa.me/529981195052?text=Hola%20Decoraciones%20Domey,%20me%20gustar%C3%ADa%20una%20cotizaci%C3%B3n">📱 <span data-es>WhatsApp</span><span data-en>WhatsApp</span></a>
+</section>
+
+<section>
+  <h2><span data-es>Quiénes somos</span><span data-en>About us</span></h2>
+  <div class="about">
+    <div>
+      <span class="tag"><span data-es>Artesanía, no producción en masa</span><span data-en>Craft, not mass production</span></span>
+      <p><span data-es>Decoraciones Domey es un taller familiar dirigido por Thomás Domey, un artesano y artista que lleva décadas creando muebles y tapicería de calidad. Antes trabajaban principalmente para grandes hoteles de lujo; hoy el enfoque es claro: <strong>casas privadas de alto nivel</strong>, especialmente la comunidad expatriada de la Riviera Maya.</span><span data-en>Decoraciones Domey is a family workshop led by Thomás Domey, a craftsman and artist with decades creating quality furniture and upholstery. They once worked mainly for large luxury hotels; today the focus is clear: <strong>high-end private homes</strong>, especially the expatriate community of the Riviera Maya.</span></p>
+      <div class="quote">"<span data-es>No es barato para México, porque solo construimos calidad. Cualquier material, cualquier diseño.</span><span data-en>Not cheap for Mexico — because we only build quality. Any material, any design.</span>" — Thomás</div>
+    </div>
+    <div class="card">
+      <h3><span data-es>Por qué expats confían en nosotros</span><span data-en>Why expats trust us</span></h3>
+      <p><span data-es>✓ Espuma <strong>antifúngica y ignífuga</strong> (retardante de fuego)<br>✓ Cualquier material que elijas — lo conseguimos<br>✓ Muebles, cojines y cortinas interior / exterior<br>✓ Acabado perfecto, detalle a detalle<br>✓ Cliente de referencia: resort 5★ Mayakoba</span><span data-en>✓ <strong>Anti-fungal &amp; fire-retardant</strong> foam<br>✓ Any material you like — we source it<br>✓ Indoor / outdoor furniture, cushions &amp; curtains<br>✓ Perfect finish, detail by detail<br>✓ Reference client: 5★ Mayakoba resort</span></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span data-es>Lo que hacemos</span><span data-en>What we do</span></h2>
+  <p class="sub"><span data-es>Entre Thomás y su equipo pueden hacer prácticamente cualquier cosa. Esto es lo más pedido:</span><span data-en>Between Thomás and his team they can make practically anything. Most requested:</span></p>
+  <div class="cards">
+    <div class="card">
+      <h3><span data-es>Muebles a medida</span><span data-en>Custom furniture</span></h3>
+      <p><span data-es>Sofás, sillas, cabeceras y piezas únicas construidas a tu medida con materiales premium y espuma antifúngica e ignífuga.</span><span data-en>Sofas, chairs, headboards and one-off pieces built to your size with premium materials and anti-fungal, fire-retardant foam.</span></p>
+    </div>
+    <div class="card">
+      <h3><span data-es>Tapicería</span><span data-en>Upholstery</span></h3>
+      <p><span data-es>Retapizado y renovación de piezas existentes con el acabado y la durabilidad que el clima costero exige.</span><span data-en>Re-upholstery and restoration of existing pieces with the finish and durability the coastal climate demands.</span></p>
+    </div>
+    <div class="card">
+      <h3><span data-es>Cortinas y cojines</span><span data-en>Curtains &amp; cushions</span></h3>
+      <p><span data-es>Interior y exterior. Cualquier tela, cualquier estilo — hechos a mano para tu espacio.</span><span data-en>Indoor and outdoor. Any fabric, any style — handmade for your space.</span></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span data-es>Galería</span><span data-en>Gallery</span></h2>
+  <p class="sub"><span data-es>Fotos próximamente — reemplaza cada cuadro con fotos reales del trabajo de Thomás.</span><span data-en>Photos coming soon — replace each tile with real photos of Thomás's work.</span></p>
+  <div class="gallery">
+    <div class="ph">📷 <span data-es>Mueble a medida</span><span data-en>Custom furniture</span></div>
+    <div class="ph">📷 <span data-es>Tapicería</span><span data-en>Upholstery</span></div>
+    <div class="ph">📷 <span data-es>Cortinas / cojines</span><span data-en>Curtains / cushions</span></div>
+    <div class="ph">📷 <span data-es>Taller / detalle</span><span data-en>Workshop / detail</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="bear">
+    <span class="badge"><span data-es>ESPECIAL</span><span data-en>SPECIAL</span></span>
+    <h2><span data-es>Osos de peluche únicos a mano</span><span data-en>Unique handmade teddy bears</span></h2>
+    <p class="sub" style="margin:14px auto 0"><span data-es>Hechos a mano por la costurera de la familia — cada uno único. Podemos bordar <strong>iniciales o un nombre</strong> a mano en el oso: el regalo perfecto para niños o recuerdos.</span><span data-en>Handmade by the family seamstress — each one unique. We can <strong>hand-sew initials or a name</strong> into the bear: the perfect gift for children or keepsakes.</span></p>
+  </div>
+</section>
+
+<section>
+  <div class="contact">
+    <h2><span data-es>Contáctanos</span><span data-en>Get in touch</span></h2>
+    <p><span data-es>Cotizaciones sin compromiso. Hablamos español e inglés.</span><span data-en>No-obligation quotes. We speak Spanish and English.</span></p>
+    <div class="areas">
+      <span>📍 Cancún</span><span>📍 Puerto Morelos</span><span>📍 Playa del Carmen</span>
+    </div>
+    <div class="row">
+      <a class="wa" href="https://wa.me/529981195052?text=Hola%20Decoraciones%20Domey,%20me%20gustar%C3%ADa%20una%20cotizaci%C3%B3n">📱 WhatsApp +52 998 119 5052</a>
+      <a href="tel:+529981195052">📞 +52 998 119 5052</a>
+      <a href="mailto:servidec@hotmail.com">✉️ servidec@hotmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Decoraciones Domey · Riviera Maya · <span data-es>Hecho a mano con calidad</span><span data-en>Handmade with quality</span>
+</footer>
+
+<script>
+function setLang(l){
+  document.documentElement.className = l==='en' ? 'lang-en' : '';
+  document.getElementById('btn-es').classList.toggle('active', l==='es');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  document.documentElement.lang = l;
+}
+</script>
+</body>
+</html>
