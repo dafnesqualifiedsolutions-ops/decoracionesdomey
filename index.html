@@ -10,17 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#fff8f0; --ink:#2b2620; --accent:#c75b39; /* terracotta */
-    --accent2:#1f7a6e; /* teal */
-    --gold:#d99a2b; --card:#ffffff; --muted:#6b6258; --line:#f0e2d2;
+    --bg:#f5f7fb; --ink:#1c2333; --accent:#1e3a8a; /* navy / royal blue */
+    --accent2:#3b5bdb; /* brighter blue */
+    --gold:#d99a2b; --card:#ffffff; --muted:#5a6478; --line:#dce3f0;
     --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-  header{position:sticky;top:0;background:rgba(255,248,240,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);border-top:3px solid var(--gold);z-index:50}
+  header{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);border-top:3px solid var(--accent);z-index:50}
   .bar{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-  .brand{font-weight:800;font-size:1.35rem;letter-spacing:.5px;color:var(--accent);font-family:var(--serif)}
+  .brand{font-weight:800;font-size:1.35rem;letter-spacing:.5px;color:var(--accent);font-family:var(--serif);display:flex;flex-direction:column;gap:2px}
   .brand small{display:block;font-weight:500;font-size:.7rem;color:var(--accent2);letter-spacing:2px}
+  .brand-logo{height:46px;width:auto;display:block}
   .lang button{background:none;border:1px solid var(--line);border-radius:20px;padding:6px 14px;cursor:pointer;font-size:.85rem;color:var(--ink)}
   .lang button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
   section{max-width:1100px;margin:0 auto;padding:64px 20px}
@@ -85,7 +86,10 @@
 <body>
 <header>
   <div class="bar">
-    <div class="brand">DECORACIONES DOMEY<small>RIVIERA MAYA</small></div>
+    <div class="brand">
+      <img src="images/logo.jpg" alt="Decoraciones Domey" class="brand-logo" />
+      <small>RIVIERA MAYA</small>
+    </div>
     <div class="lang">
       <button id="btn-es" class="active" onclick="setLang('es')">🇲🇽 ES</button>
       <button id="btn-en" onclick="setLang('en')">🇺🇸 EN</button>
